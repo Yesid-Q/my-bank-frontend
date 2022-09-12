@@ -1,0 +1,50 @@
+{
+    "FIELDS": {
+        "NAME": "Nombre",
+        "LASTNAME": "Apellido",
+        "TYPE_DOCUMENT": "Tipo Documento",
+        "DOCUMENT": "Documento",
+        "EMAIL": "Correo Electronico",
+        "PHONE": "Number Celular",
+        "PASSWORD": "Contraseña",
+        "VERIFY_PASSWORD": "Verificar Contraseña",
+        "LOG_IN": "Iniciar Session",
+        "SIGN_UP": "Registrarse",
+        "RESET": "Resetear",
+        "LOADING": "Cargando...",
+        "TRANSACTIONS": "Transacciónes",
+        "ALIAS": "Alias",
+        "BANK": "Banco",
+        "NUMBER_ACCOUNT": "Numero Cuenta",
+        "TYPE_ACCOUNT": "Tipo Cuenta",
+        "SAVE": "Guardar",
+        "EDIT": "Editar",
+        "ACCOUNT": "Cuenta",
+        "AMOUNT": "Valor",
+        "SEND": "Enviar",
+        "CANCEL": "Cancel"
+    },
+    "ERRORS": {
+        "REQUIRED": "El campo es requerido.",
+        "MIN_LENGTH": "El campo no puede ser minimo {{ min }} caracteres.",
+        "MAX_LENGTH": "El campo no puede superar {{ max }} caracteres.",
+        "FORMAT_INVALID": "El formato no es correcto ({{ example }}).",
+        "UNAUTHORIZED": "La sesión ha caducado."
+    },
+    "TITLES": {
+        "SIGN_UP": "Registro",
+        "LOG_IN": "Inicio",
+        "CREATE": "Crear Cuenta",
+        "EDIT": "Editar Cuenta",
+        "SEND_MONEY": "Enviar dinero"
+    },
+    "MESSAGE": {
+        "CREATE": "{{ field }} fue creada",
+        "UPDATE": "{{ field }} fue actualizada"
+    },
+    "MENU": {
+        "HOME": "Inicio",
+        "TRANSACTIONS": "Transacciónes",
+        "SETTINGS": "Configuraciones"
+    }
+}

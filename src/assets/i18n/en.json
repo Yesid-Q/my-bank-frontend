@@ -1,0 +1,50 @@
+{
+    "FIELDS": {
+        "NAME": "Name",
+        "LASTNAME": "Lastname",
+        "TYPE_DOCUMENT": "Type Document",
+        "DOCUMENT": "Document",
+        "EMAIL": "Email",
+        "PHONE": "Phone",
+        "PASSWORD": "Password",
+        "VERIFY_PASSWORD": "Verify Password",
+        "LOG_IN": "Log In",
+        "SIGN_UP": "Sign Up",
+        "RESET": "Reset",
+        "LOADING": "Loading...",
+        "TRANSACTIONS": "Transactions",
+        "ALIAS": "Alias",
+        "BANK": "Bank",
+        "NUMBER_ACCOUNT": "Number Account",
+        "TYPE_ACCOUNT": "Type Account",
+        "SAVE": "Save",
+        "EDIT": "Edit",
+        "ACCOUNT": "Account",
+        "AMOUNT": "Amount",
+        "SEND": "Send",
+        "CANCEL": "Cancel"
+    },
+    "ERRORS": {
+        "REQUIRED": "The field is required.",
+        "MIN_LENGTH": "The field cannor be at least {{ min }} characters.",
+        "MAX_LENGTH": "The field cannor exceed {{ max }} characters.",
+        "FORMAT_INVALID": "The format in no correct ({{ example }}).",
+        "UNAUTHORIZED": "Session has expired."
+    },
+    "TITLES": {
+        "SIGN_UP": "Sign Up",
+        "LOG_IN": "Log In",
+        "CREATE": "Create Account",
+        "EDIT": "Edit Account",
+        "SEND_MONEY": "Send Money"
+    },
+    "MESSAGE": {
+        "CREATE": "{{ field }} is created",
+        "UPDATE": "{{ field }} is update"
+    },
+    "MENU": {
+        "HOME": "Home",
+        "TRANSACTIONS": "Transactions",
+        "SETTINGS": "Settings"
+    }
+}

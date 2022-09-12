@@ -1,0 +1,20 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2">
+      <ion-card class="card-more" (click)="onNavigateForm()">
+        <ion-card-content class="h-100 d-flex">
+          <ion-img src="/assets/icon/add.svg" class="h-100"></ion-img>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2"
+      *ngFor="let account of accounts; trackBy:trackAccounts">
+      <app-account-card [id]="account.id" [alias]="account.alias" [amount]="account.amount"
+        [numberAccount]="account.numberAccount" [typeAccount]="account.typeAccount.name" [bank]="account.bank"
+        (emitSendButton)="onSendTransaction($event)" (emitEditButton)="onEditAccount($event)"
+        (emitListButton)="onShowTransaction($event)"></app-account-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

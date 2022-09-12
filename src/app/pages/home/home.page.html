@@ -1,0 +1,35 @@
+<ion-content>
+  <router-outlet></router-outlet>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <nav>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-button expand="block" fill="clear" [routerLink]="['/home/accounts']" routerLinkActive="router-link-active" >
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label slot="end">
+              {{ 'MENU.HOME' | translate }}
+            </ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" fill="clear" [routerLink]="['/home/transaction']" routerLinkActive="router-link-active">
+            <ion-icon slot="start" name="albums-outline"></ion-icon>
+            <ion-label slot="end">
+              {{ 'MENU.TRANSACTIONS' | translate }}
+            </ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" fill="clear" [routerLink]="['/home/settings']" routerLinkActive="router-link-active">
+            <ion-icon slot="start" name="settings"></ion-icon>
+            <ion-label slot="end">
+              {{ 'MENU.SETTINGS' | translate }}
+            </ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </nav>
+</ion-footer>

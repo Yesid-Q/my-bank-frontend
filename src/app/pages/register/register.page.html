@@ -1,0 +1,198 @@
+<ion-content scroll-y="false">
+  <ion-grid class="h-100">
+    <ion-row class="h-100 ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" size-sm="9" size-md="6" size-lg="5" size-xl="4">
+        <app-bank-card title="TITLES.SIGN_UP">
+          <form [formGroup]="registerForm">
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.NAME' | translate }}
+                </ion-label>
+                <ion-input formControlName="name"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['name'].invalid  && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)">
+                  <span *ngIf="registerForm.controls['name'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['name'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['name'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 100 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.LASTNAME' | translate }}
+                </ion-label>
+                <ion-input formControlName="lastname"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['lastname'].invalid  && (registerForm.controls['lastname'].dirty || registerForm.controls['lastname'].touched)">
+                  <span *ngIf="registerForm.controls['lastname'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['lastname'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['lastname'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 100 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.TYPE_DOCUMENT' | translate }}
+                </ion-label>
+                <ion-select interface="popover" formControlName="documentId">
+                  <ion-select-option [value]="document.id" *ngFor="let document of documents; trackBy: trackByDocument">
+                    {{ document.name | titlecase }}
+                  </ion-select-option>
+                  <ion-label color="danger"
+                    *ngIf="registerForm.controls['documentId'].invalid  && (registerForm.controls['documentId'].dirty || registerForm.controls['documentId'].touched)">
+                    <span *ngIf="registerForm.controls['documentId'].errors.required">
+                      {{ 'ERRORS.REQUIRED' | translate }}
+                    </span>
+                  </ion-label>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.DOCUMENT' | translate }}
+                </ion-label>
+                <ion-input inputmode="numeric" formControlName="docNumber"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['docNumber'].invalid  && (registerForm.controls['docNumber'].dirty || registerForm.controls['docNumber'].touched)">
+                  <span *ngIf="registerForm.controls['docNumber'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['docNumber'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['docNumber'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 20 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['docNumber'].errors.pattern">
+                    {{ 'ERRORS.FORMAT_INVALID' | translate: { example: '0000000' } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.EMAIL' | translate }}
+                </ion-label>
+                <ion-input inputmode="email" formControlName="email" type="email"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['email'].invalid  && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+                  <span *ngIf="registerForm.controls['email'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['email'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['email'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 100 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.PHONE' | translate }}
+                </ion-label>
+                <ion-input inputmode="numeric" formControlName="phone"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['phone'].invalid  && (registerForm.controls['phone'].dirty || registerForm.controls['phone'].touched)">
+                  <span *ngIf="registerForm.controls['phone'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['phone'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 2 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['phone'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 20 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.PASSWORD' | translate }}
+                </ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['password'].invalid  && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+                  <span *ngIf="registerForm.controls['password'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['password'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 8 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['password'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 24 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <ion-label color="primary">
+                  {{ 'FIELDS.VERIFY_PASSWORD' | translate }}
+                </ion-label>
+                <ion-input type="password" formControlName="verifyPassword"></ion-input>
+                <ion-label color="danger"
+                  *ngIf="registerForm.controls['verifyPassword'].invalid  && (registerForm.controls['verifyPassword'].dirty || registerForm.controls['verifyPassword'].touched)">
+                  <span *ngIf="registerForm.controls['verifyPassword'].errors.required">
+                    {{ 'ERRORS.REQUIRED' | translate }}
+                  </span>
+                  <span *ngIf="registerForm.controls['verifyPassword'].errors.minlength">
+                    {{ 'ERRORS.MIN_LENGTH' | translate: { min: 8 } }}
+                  </span>
+                  <span *ngIf="registerForm.controls['verifyPassword'].errors.maxlength">
+                    {{ 'ERRORS.MAX_LENGTH' | translate: { max: 24 } }}
+                  </span>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button color="primary" expand="block" type="submit" [disabled]="loading">
+                  <ng-container *ngIf="loading; then thenLoading; else elseLoading"></ng-container>
+                  <ng-template #thenLoading>
+                    {{ 'FIELDS.LOADING' | translate }}
+                  </ng-template>
+                  <ng-template #elseLoading>
+                    {{ 'FIELDS.SIGN_UP' | translate }}
+                  </ng-template>
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button color="danger" expand="block" type="reset" [disabled]="loading">
+                  {{ 'FIELDS.RESET' | translate }}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </form>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button routerLink="/login" fill="clear" expand="block" [disabled]="loading">
+                Ya tienes cuenta?
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </app-bank-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="6">
+      <ion-list>
+        <ng-container *ngFor="let transaction of transactions; trackBy:trackByTransactions">
+          <ion-item [color]="transaction.owner.id === transaction.receiver.id ? 'warning' : authStore.value.id === transaction.owner.id ? 'danger' : 'success'">
+            <ion-label>
+              <div class="account-bank">
+                {{ transaction.accountOwner.bank | titlecase }}
+              </div>
+              <div class="account-alias">
+                {{ transaction.accountOwner.alias | titlecase }}
+              </div>
+              <div class="account-number">
+                # {{ transaction.accountOwner.numberAccount }}
+              </div>
+            </ion-label>
+            <ion-label class="ion-text-center">
+              <ion-icon
+                [name]="transaction.owner.id === transaction.receiver.id ? 'infinite-outline' : authStore.value.id === transaction.owner.id ? 'caret-forward-outline' : 'caret-back-outline'">
+              </ion-icon>
+            </ion-label>
+            <ion-label class="ion-text-end">
+              <div class="account-bank">
+                {{ transaction.accountReceiver.bank | titlecase }}
+              </div>
+              <div class="account-alias">
+                {{ transaction.accountReceiver.alias | titlecase }}
+              </div>
+              <div class="account-number">
+                # {{ transaction.accountReceiver.numberAccount }}
+              </div>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,17 @@
+ion-card {
+    height: 230px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-more {
+    cursor: pointer;
+    transition: transform 300ms ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}

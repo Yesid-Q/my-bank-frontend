@@ -1,0 +1,22 @@
+ion-card {
+    height: 230px;
+}
+
+ion-button {
+    height: 50px;
+    width: 50px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --border-radius: 64px;
+}
+
+ion-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.ellipsis-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

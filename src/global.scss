@@ -24,3 +24,102 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.h-100 {
+    height: 100%;
+}
+
+:root {
+    ion-input {
+        --background: rgba(0,0,0,.05);
+        border-radius: var(--bank-radius);
+        --padding-start: var(--bank-radius);
+        --padding-end: var(--bank-radius);
+    }
+
+    ion-select {
+        background: rgba(0,0,0,.05);
+        border-radius: var(--bank-radius);
+        --padding-start: var(--bank-radius);
+        --padding-end: var(--bank-radius);
+    }
+
+    ion-button {
+        --border-radius: var(--bank-radius);
+    }
+}
+
+.alert {
+    & .alert-wrapper {
+      border-radius: var(--level-border);
+  
+      & .alert-head {
+        background-color: var(--ion-color-primary);
+  
+        & .alert-title {
+          color: var(--ion-color-primary-contrast);
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+  
+      & .alert-message {
+        &.sc-ion-alert-md {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  
+    & .alert-button-group {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 0 6px;
+    }
+  
+    & .btn {
+      border-radius: var(--level-border);
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      text-transform: capitalize;
+      white-space: initial;
+      flex: 1;
+      display: flex;
+      margin: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      line-height: 1;
+  
+      & .alert-button-inner {
+        justify-content: center;
+      }
+  
+      &.success {
+        background: var(--ion-color-success);
+        color: var(--ion-color-success-contrast);
+      }
+  
+      &.danger {
+        background: var(--ion-color-danger-light);
+        color: var(--ion-color-danger-light-contrast);
+      }
+  
+      &.primary {
+        background: var(--ion-color-primary);
+        color: var(--ion-color-primary-contrast);
+      }
+  
+      &.padding {
+        margin: 4px 12px;
+      }
+    }
+  }
+  

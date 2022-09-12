@@ -1,0 +1,129 @@
+<ion-grid class="h-100">
+  <ion-row class="h-100 ion-justify-content-center ion-align-items-center">
+    <ion-col size="12" size-sm="9" size-md="6" size-lg="5" size-xl="4">
+      <app-bank-card [title]="id === '' ? 'TITLES.CREATE' : 'TITLES.EDIT'">
+        <form [formGroup]="accountForm">
+          <ion-row>
+            <ion-col size="12">
+              <ion-label color="primary">
+                {{ 'FIELDS.ALIAS' | translate }}
+              </ion-label>
+              <ion-input formControlName="alias"></ion-input>
+              <ion-label color="danger"
+                *ngIf="accountForm.controls['alias'].invalid  && (accountForm.controls['alias'].dirty || accountForm.controls['alias'].touched)">
+                <span *ngIf="accountForm.controls['alias'].errors.required">
+                  {{ 'ERRORS.REQUIRED' | translate }}
+                </span>
+                <span *ngIf="accountForm.controls['alias'].errors.minlength">
+                  {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                </span>
+                <span *ngIf="accountForm.controls['alias'].errors.maxlength">
+                  {{ 'ERRORS.MAX_LENGTH' | translate: { max: 100 } }}
+                </span>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-label color="primary">
+                {{ 'FIELDS.BANK' | translate }}
+              </ion-label>
+              <ion-input formControlName="bank"></ion-input>
+              <ion-label color="danger"
+                *ngIf="accountForm.controls['bank'].invalid  && (accountForm.controls['bank'].dirty || accountForm.controls['bank'].touched)">
+                <span *ngIf="accountForm.controls['bank'].errors.required">
+                  {{ 'ERRORS.REQUIRED' | translate }}
+                </span>
+                <span *ngIf="accountForm.controls['bank'].errors.minlength">
+                  {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                </span>
+                <span *ngIf="accountForm.controls['bank'].errors.maxlength">
+                  {{ 'ERRORS.MAX_LENGTH' | translate: { max: 100 } }}
+                </span>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-label color="primary">
+                {{ 'FIELDS.AMOUNT' | translate }}
+              </ion-label>
+              <ion-input formControlName="amount" type="number"></ion-input>
+              <ion-label color="danger"
+                *ngIf="accountForm.controls['amount'].invalid  && (accountForm.controls['amount'].dirty || accountForm.controls['amount'].touched)">
+                <span *ngIf="accountForm.controls['amount'].errors.required">
+                  {{ 'ERRORS.REQUIRED' | translate }}
+                </span>
+                <span *ngIf="accountForm.controls['amount'].errors.min">
+                  {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                </span>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-label color="primary">
+                {{ 'FIELDS.NUMBER_ACCOUNT' | translate }}
+              </ion-label>
+              <ion-input inputmode="numeric" formControlName="numberAccount"></ion-input>
+              <ion-label color="danger"
+                *ngIf="accountForm.controls['numberAccount'].invalid  && (accountForm.controls['numberAccount'].dirty || accountForm.controls['numberAccount'].touched)">
+                <span *ngIf="accountForm.controls['numberAccount'].errors.required">
+                  {{ 'ERRORS.REQUIRED' | translate }}
+                </span>
+                <span *ngIf="accountForm.controls['numberAccount'].errors.minlength">
+                  {{ 'ERRORS.MIN_LENGTH' | translate: { min: 3 } }}
+                </span>
+                <span *ngIf="accountForm.controls['numberAccount'].errors.maxlength">
+                  {{ 'ERRORS.MAX_LENGTH' | translate: { max: 11 } }}
+                </span>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-label color="primary">
+                {{ 'FIELDS.TYPE_ACCOUNT' | translate }}
+              </ion-label>
+              <ion-select interface="popover" formControlName="typeAccountId">
+                <ion-select-option [value]="typeAccount.id" *ngFor="let typeAccount of typesAccounts; trackBy:trackByTypesAccounts">
+                  {{ typeAccount.name }}
+                </ion-select-option>
+              </ion-select>
+              <ion-label color="danger"
+                *ngIf="accountForm.controls['typeAccountId'].invalid  && (accountForm.controls['typeAccountId'].dirty || accountForm.controls['typeAccountId'].touched)">
+                <span *ngIf="accountForm.controls['typeAccountId'].errors.required">
+                  {{ 'ERRORS.REQUIRED' | translate }}
+                </span>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button color="primary" expand="block" type="submit" [disabled]="loading">
+                <ng-container *ngIf="loading; then thenLoading; else elseLoading"></ng-container>
+                <ng-template #thenLoading>
+                  {{ 'FIELDS.LOADING' | translate }}
+                </ng-template>
+                <ng-template #elseLoading>
+                  <ng-container *ngIf="id === ''; then thenSave; else elseSave"></ng-container>
+                  <ng-template #thenSave>
+                    {{ 'FIELDS.SAVE' | translate }}
+                  </ng-template>
+                  <ng-template #elseSave>
+                    {{ 'FIELDS.EDIT' | translate }}
+                  </ng-template>
+                </ng-template>
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button color="danger" expand="block" type="reset" [disabled]="loading">
+                {{ 'FIELDS.RESET' | translate }}
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+      </app-bank-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
