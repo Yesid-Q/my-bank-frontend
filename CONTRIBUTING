@@ -1,0 +1,7 @@
+Se debe instalar las dependencias
+
+> npm install
+
+correr el comnado
+
+> ionic serve
