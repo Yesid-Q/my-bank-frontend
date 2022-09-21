@@ -1,6 +1,6 @@
 <ion-grid>
   <ion-row class="ion-justify-content-center">
-    <ion-col size="6">
+    <ion-col size="11" size-md="6">
       <ion-list>
         <ng-container *ngFor="let transaction of transactions; trackBy:trackByTransactions">
           <ion-item [color]="transaction.owner.id === transaction.receiver.id ? 'warning' : authStore.value.id === transaction.owner.id ? 'danger' : 'success'">

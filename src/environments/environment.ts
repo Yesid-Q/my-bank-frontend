@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://localhost:8000/v1/'
+  url: 'https://my-bank-backend-production.up.railway.app/v1/'
 };
 
 /*
